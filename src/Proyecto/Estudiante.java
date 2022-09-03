@@ -52,8 +52,16 @@ public class Estudiante extends Persona{
     proyecto de grado, para lo que se debe mostrar un mensaje así:
     “Estudiante NN ya puedes matricular Proyecto de Grado�?.
     */
-    public String presentacionProyecto(){
-        return "Si es posible";
+    public void presentacionProyecto(){
+    	
+    	double calculoCreditos = (90*(carrera.getnCreditosCarrera()))/100;
+    	int creditosTotales = (int) Math.ceil(calculoCreditos);
+    	
+    	if(nCreditos>=creditosTotales) {
+    		System.out.println("Estudiante "+nombre+" ya puedes matricular Proyecto de Grado\n");
+    		
+    	} else System.out.println("No es posible matricular el proyecto de grado, ya que "+nombre+
+    			" no ha superado el 90% de los creditos - "+creditosTotales+"\n");
     }
     
 }

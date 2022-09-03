@@ -12,14 +12,15 @@ package Proyecto;
 public class Administrativo extends Persona{
     
     private int anoIngreso;
-
+    private double salario;
     public Administrativo() {
         super();
     }
 
-    public Administrativo(String nombre, String apellido, String codigo, int anoIngreso) {
+    public Administrativo(String nombre, String apellido, String codigo, int anoIngreso, double salario) {
         super(nombre, apellido, codigo);
         this.anoIngreso = anoIngreso;
+        this.salario = salario;
     }
 
     public int getAnoIngreso() {
@@ -29,8 +30,16 @@ public class Administrativo extends Persona{
         this.anoIngreso = anoIngreso;
     }
     
-    public int calcularAnos (){
-        return 0;
+    public double getSalario() {
+		return salario;
+	}
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	
+	public int calcularAntiguedad (){
+        return (2022-anoIngreso);
     }
     
 }
